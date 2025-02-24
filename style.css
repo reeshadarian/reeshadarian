@@ -1,0 +1,155 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #fefefe;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Navigation */
+nav {
+  position: fixed;
+  width: 100%;
+  background: rgba(250, 240, 255, 0.9);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  z-index: 100;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 15px 0;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #6c5ce7;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #a29bfe;
+}
+
+/* Main Content */
+main {
+  padding-top: 80px; /* Space for fixed nav */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Sections */
+section {
+  padding: 60px 20px;
+  margin: 20px 0;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+section.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+section h2 {
+  font-size: 2rem;
+  color: #6c5ce7;
+  margin-bottom: 20px;
+}
+
+/* Contact Details */
+.contact-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.contact-details .contact-text {
+  flex: 1;
+  min-width: 250px;
+  padding: 20px;
+}
+
+.contact-details .contact-image {
+  flex: 1;
+  min-width: 200px;
+  padding: 20px;
+  text-align: center;
+}
+
+.contact-details .contact-image img {
+  max-width: 200px;
+  border-radius: 50%;
+  border: 5px solid #a29bfe;
+}
+
+/* Articles in sections */
+.education-item,
+article {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.education-item ul,
+article ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+/* Contact Me Button */
+#contact-me {
+  text-align: center;
+}
+
+.contact-button {
+  display: inline-block;
+  background: #fd79a8;
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.contact-button:hover {
+  background: #ff7675;
+  transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #f8f0ff;
+  color: #6c5ce7;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+  }
+  .contact-details {
+    flex-direction: column;
+  }
+}
