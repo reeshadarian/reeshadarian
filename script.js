@@ -1,19 +1,16 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const cta = document.querySelector('.cta');
-    cta.addEventListener('mouseover', () => {
-        cta.style.transform = 'scale(1.1)';
-    });
-    cta.addEventListener('mouseleave', () => {
-        cta.style.transform = 'scale(1)';
-    });
+document.addEventListener("DOMContentLoaded", function() {
+  // Use IntersectionObserver to animate sections on scroll
+  const sections = document.querySelectorAll("section");
 
-    // Smooth Scroll
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("animate");
+      }
     });
+  }, { threshold: 0.2 });
+
+  sections.forEach(section => {
+    observer.observe(section);
+  });
 });
