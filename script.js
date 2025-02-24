@@ -1,25 +1,19 @@
-document.addEventListener("DOMContentLoaded", function() {
-    // Dark Mode Toggle
-    const toggle = document.getElementById("dark-mode-toggle");
-    toggle.addEventListener("click", function() {
-        document.body.classList.toggle("dark-mode");
+document.addEventListener('DOMContentLoaded', () => {
+    const cta = document.querySelector('.cta');
+    cta.addEventListener('mouseover', () => {
+        cta.style.transform = 'scale(1.1)';
+    });
+    cta.addEventListener('mouseleave', () => {
+        cta.style.transform = 'scale(1)';
     });
 
-    // Animate skill bars
-    function animateSkills() {
-        document.querySelectorAll(".progress").forEach(bar => {
-            let width = bar.getAttribute("data-percent");
-            bar.style.width = width + "%";
+    // Smooth Scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
         });
-    }
-
-    // Scroll Event to trigger skill animation
-    window.addEventListener("scroll", function() {
-        let skillsSection = document.getElementById("skills").offsetTop;
-        let scrollPosition = window.scrollY + window.innerHeight;
-        
-        if (scrollPosition > skillsSection) {
-            animateSkills();
-        }
     });
 });
