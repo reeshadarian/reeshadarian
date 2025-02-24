@@ -1,120 +1,50 @@
-/* General Styling */
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    transition: background 0.3s, color 0.3s;
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #222;
-    padding: 15px 30px;
+    background: linear-gradient(45deg, #1a1a2e, #16213e);
     color: white;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
+    text-align: center;
 }
 
-header .logo {
-    font-size: 24px;
-    font-weight: bold;
-}
-
-nav ul {
-    list-style: none;
+.hero {
+    height: 100vh;
     display: flex;
-    gap: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 15px;
 }
 
-nav ul li a {
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.cta {
+    padding: 10px 20px;
+    background: #e94560;
     color: white;
     text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-nav ul li a:hover {
-    color: #ffcc00;
-}
-
-#dark-mode-toggle {
-    background: none;
-    border: none;
-    font-size: 20px;
-    cursor: pointer;
-}
-
-/* Hero Section */
-#hero {
-    text-align: center;
-    padding: 100px 20px;
-    background: linear-gradient(to right, #000428, #004e92);
-    color: white;
-}
-
-#hero img {
-    width: 150px;
-    border-radius: 50%;
-    margin-top: 10px;
-}
-
-/* Sections */
-section {
-    padding: 60px 20px;
-    text-align: center;
-}
-
-.edu-box {
-    background: white;
-    padding: 20px;
-    box-shadow: 2px 2px 10px gray;
-    margin: 10px auto;
-    width: 60%;
-}
-
-/* Skills */
-.skill-bar {
-    width: 80%;
-    background: #ddd;
-    margin: 10px auto;
-    position: relative;
     border-radius: 5px;
+    transition: 0.3s;
 }
 
-.skill-bar span {
-    position: absolute;
-    left: 10px;
-    top: 5px;
-    font-weight: bold;
+.cta:hover {
+    background: #ff2e63;
+    transform: scale(1.1);
 }
 
-.progress {
-    height: 20px;
-    background: #ffcc00;
-    width: 0;
-    border-radius: 5px;
-    transition: width 1s ease-in-out;
-}
-
-footer {
-    background: #222;
-    color: white;
-    text-align: center;
-    padding: 10px;
-}
-
-/* Dark Mode */
-.dark-mode {
-    background: #111;
-    color: white;
-}
-
-.dark-mode .edu-box {
-    background: #222;
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
 }
